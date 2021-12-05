@@ -1,7 +1,7 @@
-const SkeletonPlugin = require('./src/skeletonPlugin')
-const Skeleton = require('./src/skeleton')
+const SkeletonPlugin = require("./lib/skeletonPlugin");
+const Skeleton = require("./lib/skeleton");
 
 module.exports = {
   SkeletonPlugin,
-  Skeleton
-}
+  Skeleton,
+};

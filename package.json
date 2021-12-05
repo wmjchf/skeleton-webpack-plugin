@@ -1,7 +1,7 @@
 {
-  "name": "page-skeleton-webpack-plugin",
-  "version": "1.0.1",
-  "description": "web site skeleton generator",
+  "name": "@bufang/skeleton-webpack-plugin",
+  "version": "1.0.6",
+  "description": "自动生成骨架屏",
   "main": "index.js",
   "scripts": {
     "lint": "eslint src client/{index,sockjs,utils}.js",
@@ -17,12 +17,17 @@
     "build:sockjs": "webpack ./client/sockjs.js -o client/sockjs.bundle.js --color --config client/webpack.sockjs.config.js",
     "build:preview": "cross-env NODE_ENV=production webpack --color --config preview/webpack.preview.config.js",
     "build:script": "rollup --config src/script/rollup.config.js",
-    "prepare": "npm run build:index && npm run build:sockjs && npm run build:preview && npm run build:script"
+    "build": "npm run build:index && npm run build:sockjs && npm run build:preview && npm run build:script"
   },
   "keywords": [
     "puppeteer",
     "page skeleton",
     "webpack"
+  ],
+  "files": [
+    "client/index.bundle.js",
+    "preview/dist",
+    "lib"
   ],
   "author": "jocs",
   "license": "MIT",
@@ -48,7 +53,8 @@
     "sockjs-client": "^1.1.4",
     "tiza": "^2.1.0",
     "vue": "^2.5.16",
-    "vuex": "^3.0.1"
+    "vuex": "^3.0.1",
+    "webpack-log": "^1.2.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -86,8 +92,7 @@
     "vue-loader": "^15.2.2",
     "vue-template-compiler": "^2.5.16",
     "webpack": "^4.10.0",
-    "webpack-cli": "^3.1.1",
-    "webpack-log": "^1.2.0"
+    "webpack-cli": "^3.1.1"
   },
   "peerDependencies": {
     "html-webpack-plugin": "^3.0.0 || ^4.0.0"
@@ -97,5 +102,8 @@
   ],
   "standard": {
     "ignore": "*"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
